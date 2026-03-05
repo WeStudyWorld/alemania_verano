@@ -45,7 +45,7 @@ nav .float-btn:hover { transform: translateY(-2px); }
 .reveal.visible { opacity: 1; }
 
 /* INNER WRAPPER */
-.inner { max-width: 1280px; margin: 0 auto; padding: 0 28px; }
+.inner { max-width: 1280px; margin: 0 auto; padding: 0 16px; }
 
 /* NAV */
 nav {
@@ -54,7 +54,7 @@ nav {
   border-bottom: 1px solid #1e1e1e;
 }
 .nav-inner {
-  max-width: 1280px; margin: 0 auto; padding: 8px 28px;
+  max-width: 1280px; margin: 0 auto; padding: 8px 16px;
   display: flex; align-items: center; justify-content: space-between;
 }
 .nav-logo img { 
@@ -73,8 +73,8 @@ nav {
 
 /* HERO */
 .hero {
-  min-height: 100vh; background: var(--black);
-  position: relative; overflow: hidden;
+  min-height: 78vh; background: var(--black);
+  position: relative; overflow: visible;
   display: flex; align-items: center; padding-top: 68px;
 }
 .hero-photo {
@@ -106,7 +106,7 @@ nav {
 }
 .hero-content {
   position: relative; z-index: 2;
-  max-width: 1280px; margin: 0 auto; padding: 60px 28px 140px;
+  max-width: 1280px; margin: 0 auto; padding: 50px 16px 100px;
   width: 100%;
 }
 .hero-tag {
@@ -161,22 +161,13 @@ nav {
 }
 .btn-secondary:hover { color: var(--white); border-color: var(--white); }
 
-/* STATS - floating cards anchored below hero */
-.stats-band {
-  position: relative;
-  z-index: 10;
-  padding: 0 28px 40px;
-  margin-top: 0;
-  background: var(--black);
-}
-
+/* STATS - inside hero */
 .stats-inner {
-  max-width: 1280px; 
-  margin: -60px auto 0; /* AQUÍ ESTÁ LA MAGIA: -60px de margen superior */
+  max-width: 100%; 
   display: grid; 
   grid-template-columns: repeat(4,1fr);
   gap: 16px;
-  position: relative; /* Para asegurarnos de que quede por encima de la foto */
+  position: relative;
   z-index: 20;
 }
 .stat-card {
@@ -637,13 +628,12 @@ footer .inner { display: flex; align-items: center; justify-content: space-betwe
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-  .inner { padding: 0 20px; }
-  .nav-inner { padding: 8px 16px; }
+  .inner { padding: 0 12px; }
+  .nav-inner { padding: 8px 12px; }
   .nav-logo img { height: 32px; }
   .nav-cta { font-size: 12px; padding: 8px 12px; letter-spacing: 0.04em; }
-  .hero-content { padding: 50px 20px 200px; }
+  .hero-content { padding: 50px 16px 40px; }
   .hero-headline { font-size: clamp(48px,12vw,80px); max-width: 100%; }
-  .stats-band { padding: 0 16px 32px; }
   .stats-inner { grid-template-columns: repeat(2,1fr); gap: 10px; }
   .schengen { padding: 40px 0 80px; }
   .schengen .inner, .final-cta .inner { grid-template-columns: 1fr; gap: 40px; }
@@ -701,19 +691,17 @@ footer .inner { display: flex; align-items: center; justify-content: space-betwe
       <a href="https://wa.me/573150744990?text=Hola%2C%20quiero%20info%20sobre%20el%20verano%20en%20Berlín" class="btn-primary float-btn" target="_blank">Quiero mi lugar →</a>
       <a href="#paquetes" class="btn-secondary">Ver paquetes</a>
     </div>
-  </div>
-</section>
 
-<div class="stats-band">
-  <div class="stats-inner">
-    <div class="stat-card float-card">
-      <div class="stat-number">90</div>
-      <div class="stat-label">Días sin visa</div>
-    </div>
-    <div class="stat-card float-card">
-      <div class="stat-number">4</div>
-      <div class="stat-label">Paquetes disponibles</div>
-    </div>
+    <!-- STATS INSIDE HERO -->
+    <div class="stats-inner" style="margin-top: 40px; position: relative; z-index: 10;">
+      <div class="stat-card float-card">
+        <div class="stat-number">90</div>
+        <div class="stat-label">Días sin visa</div>
+      </div>
+      <div class="stat-card float-card">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Paquetes disponibles</div>
+      </div>
     <div class="stat-card float-card">
       <div class="stat-number" style="font-size:22px">VERANO 2026</div>
       <div class="stat-label">Jun · Jul · Ago</div>
@@ -723,7 +711,8 @@ footer .inner { display: flex; align-items: center; justify-content: space-betwe
       <div class="stat-label">Descuento activo</div>
     </div>
   </div>
-</div>
+  </div>
+</section>
 
 <!-- SCHENGEN -->
 <section class="schengen">
